@@ -1,0 +1,21 @@
+syntax ="proto3";
+
+option go_package="github.com/thuytrinh2101/waller-service/wallet";
+
+service WalletService{
+  rpc Create(Wallet) returns (Wallet);
+  rpc GetById(GetWalletByUserIdRequest) returns(Wallet);
+
+}
+
+message Wallet{
+  int32 id = 1;
+  int32 user_id = 2;
+  string balance = 3;
+}
+
+message GetWalletByUserIdRequest{
+  int32 id = 1;
+}
+
+
