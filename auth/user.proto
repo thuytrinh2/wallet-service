@@ -1,0 +1,28 @@
+syntax ="proto3";
+
+option go_package="github.com/thuytrinh2101/waller-service/auth";
+
+service AuthService{
+  rpc Register(User) returns (GetUserResponse);
+  rpc GetByID(GetByIdRequest) returns(GetUserResponse);
+}
+
+message User{
+  int32 id = 1;
+  string full_name = 2;
+  string phone = 3;
+  string password = 4;
+}
+
+message GetUserResponse{
+  int32 id = 1;
+  string full_name = 2;
+  string phone = 3;
+}
+
+message GetByIdRequest{
+  int32 id = 1;
+}
+
+
+
